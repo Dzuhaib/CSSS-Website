@@ -1,35 +1,11 @@
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { insertInquirySchema, type InsertInquiry } from "@shared/schema";
-import { useCreateInquiry } from "@/hooks/use-inquiries";
+import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { PageHeader } from "@/components/PageHeader";
 import { Section } from "@/components/Section";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 
 export default function Contact() {
-  const { mutate, isPending } = useCreateInquiry();
-  const form = useForm<InsertInquiry>({
-    resolver: zodResolver(insertInquirySchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    },
-  });
-
-  function onSubmit(data: InsertInquiry) {
-    mutate(data, {
-      onSuccess: () => form.reset(),
-    });
-  }
-
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <Navbar />
@@ -39,133 +15,131 @@ export default function Contact() {
         image="/images/water-distribution.jpg"
       />
 
-      <Section>
-        <div className="grid lg:grid-cols-2 gap-16">
-          {/* Contact Information */}
-          <div>
-            <h2 className="text-3xl font-display font-bold text-primary mb-6">Contact Information</h2>
-            <p className="text-muted-foreground mb-10 text-lg">
+      <Section className="py-20 md:py-28">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="inline-block text-accent font-semibold uppercase tracking-widest text-sm mb-4">Contact Us</span>
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-primary mb-6">We're Here to Help</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Whether you have a question about our projects, want to partner with us, or are looking for support, our team is here to help.
             </p>
+          </motion.div>
 
-            <div className="space-y-8">
-              <div className="flex gap-4">
-                <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center text-accent shrink-0">
-                  <MapPin className="w-6 h-6" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg text-primary">Headquarters</h3>
-                  <p className="text-muted-foreground">Maka Al-Mukarama Street<br />Mogadishu, Somalia</p>
-                </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-card p-8 rounded-2xl shadow-sm border border-border/50 hover:shadow-lg transition-shadow"
+            >
+              <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6">
+                <MapPin className="w-7 h-7" />
               </div>
+              <h3 className="font-bold text-xl text-primary mb-3 font-display">Headquarters</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Maka Al-Mukarama Street<br />
+                Mogadishu, Somalia
+              </p>
+            </motion.div>
 
-              <div className="flex gap-4">
-                <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center text-accent shrink-0">
-                  <Phone className="w-6 h-6" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg text-primary">Phone</h3>
-                  <p className="text-muted-foreground">+252 61 123 4567<br />+252 61 765 4321</p>
-                </div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-card p-8 rounded-2xl shadow-sm border border-border/50 hover:shadow-lg transition-shadow"
+            >
+              <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6">
+                <Phone className="w-7 h-7" />
               </div>
+              <h3 className="font-bold text-xl text-primary mb-3 font-display">Phone</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                +252 61 123 4567<br />
+                +252 61 765 4321
+              </p>
+            </motion.div>
 
-              <div className="flex gap-4">
-                <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center text-accent shrink-0">
-                  <Mail className="w-6 h-6" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg text-primary">Email</h3>
-                  <p className="text-muted-foreground">info@csss-somalia.org<br />partnerships@csss-somalia.org</p>
-                </div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="bg-card p-8 rounded-2xl shadow-sm border border-border/50 hover:shadow-lg transition-shadow"
+            >
+              <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6">
+                <Mail className="w-7 h-7" />
               </div>
+              <h3 className="font-bold text-xl text-primary mb-3 font-display">Email</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                <a href="mailto:info@csss-somalia.org" className="hover:text-primary transition-colors">info@csss-somalia.org</a><br />
+                <a href="mailto:partnerships@csss-somalia.org" className="hover:text-primary transition-colors">partnerships@csss-somalia.org</a>
+              </p>
+            </motion.div>
 
-              <div className="flex gap-4">
-                <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center text-accent shrink-0">
-                  <Clock className="w-6 h-6" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg text-primary">Office Hours</h3>
-                  <p className="text-muted-foreground">Saturday - Thursday: 8:00 AM - 4:00 PM<br />Friday: Closed</p>
-                </div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="bg-card p-8 rounded-2xl shadow-sm border border-border/50 hover:shadow-lg transition-shadow"
+            >
+              <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6">
+                <Clock className="w-7 h-7" />
               </div>
+              <h3 className="font-bold text-xl text-primary mb-3 font-display">Office Hours</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Saturday - Thursday: 8:00 AM - 4:00 PM<br />
+                Friday: Closed
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Social Links */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 }}
+            className="mt-16 text-center"
+          >
+            <h3 className="font-bold text-xl text-primary mb-6 font-display">Follow Us</h3>
+            <div className="flex justify-center gap-4">
+              <a 
+                href="#" 
+                className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
+                aria-label="Facebook"
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a 
+                href="#" 
+                className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
+                aria-label="Twitter"
+              >
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a 
+                href="#" 
+                className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a 
+                href="#" 
+                className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
             </div>
-          </div>
-
-          {/* Contact Form */}
-          <div className="bg-card p-8 rounded-2xl shadow-lg border border-border">
-            <h2 className="text-2xl font-display font-bold text-primary mb-6">Send us a Message</h2>
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                <FormField
-                  control={form.control}
-                  name="name"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Full Name</FormLabel>
-                      <FormControl>
-                        <Input placeholder="John Doe" {...field} className="bg-muted/30" />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Email Address</FormLabel>
-                      <FormControl>
-                        <Input placeholder="john@example.com" type="email" {...field} className="bg-muted/30" />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="subject"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Subject</FormLabel>
-                      <FormControl>
-                        <Input placeholder="How can we help?" {...field} className="bg-muted/30" />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="message"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Message</FormLabel>
-                      <FormControl>
-                        <Textarea 
-                          placeholder="Your message here..." 
-                          className="min-h-[150px] bg-muted/30 resize-none" 
-                          {...field} 
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <Button 
-                  type="submit" 
-                  disabled={isPending}
-                  className="w-full h-12 text-lg bg-primary hover:bg-primary/90"
-                >
-                  {isPending ? "Sending..." : "Send Message"}
-                </Button>
-              </form>
-            </Form>
-          </div>
+          </motion.div>
         </div>
       </Section>
 
