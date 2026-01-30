@@ -1,0 +1,217 @@
+Project Type: Frontend only
+Framework: Modern HTML, CSS, JavaScript (you may use React or Next.js frontend only if needed)
+No backend, no databases, no auth
+
+PROMPT
+
+Create a premium, modern, humanitarian nonprofit website for an organization called:
+
+Charitable Society for Students of Sciences (CSSS)
+
+This is a nonprofit humanitarian and development organization, founded in Somalia in 2003, focused on education, health, humanitarian aid, and community development.
+
+The website must feel:
+
+Trustworthy
+
+Human-centered
+
+Professional
+
+Clean and premium
+
+Calm and inspiring
+
+This is frontend only, no backend functionality.
+
+DESIGN & UI REQUIREMENTS
+
+Pixel-perfect responsive design for desktop, tablet, and mobile
+
+Premium rich UI with generous white space
+
+Smooth animations on scroll
+
+Soft fade, slide, and parallax effects
+
+Custom cursor effect (subtle circle or magnetic cursor, not distracting)
+
+Smooth hover states on buttons, cards, and links
+
+Accessible color contrast and readable typography
+
+Visual Style
+
+Color palette inspired by humanitarian and development work
+(soft blues, earth tones, warm neutrals, white backgrounds)
+
+Modern sans-serif font for readability
+
+Clear hierarchy with strong headings and calm body text
+
+Use icons and illustrations sparingly and tastefully
+
+WEBSITE STRUCTURE
+Home Page
+
+Hero section with:
+
+Organization name: Charitable Society for Students of Sciences (CSSS)
+
+Short mission statement highlighting education, health, and humanitarian support
+
+Call to action buttons such as “Our Work” and “Get Involved”
+
+Animated stats section (optional):
+
+Years of impact
+
+Focus areas
+
+Communities supported
+
+About Us Page
+
+Content to include:
+
+CSSS is a nonprofit humanitarian and development organization established in Somalia in 2003.
+Its mission is to support vulnerable individuals affected by human-made and natural disasters, with a strong emphasis on education and health services.
+
+Include animated sections for:
+
+Education
+
+Water, Sanitation, and Hygiene (WASH)
+
+Food Security and Economic Development
+
+Orphan and Child Care
+
+Youth and Women Empowerment
+
+Peace-building, Conflict Transformation, and Good Governance
+
+Add a small section explaining the source of funds, noting grants, donations, and self-funded projects by active members.
+
+Projects Page
+
+Create a visually rich projects layout using cards and sections.
+
+Education
+
+School infrastructure development
+
+Improving learning environments
+
+Long-term educational impact
+
+Health
+
+Local health facilities
+
+Primary healthcare access
+
+Emergency medical services
+
+Humanitarian and Emergency Projects
+
+Disaster response
+
+Conflict and crisis relief
+
+Long-term resilience building
+
+Skills Training and Income Generation
+
+Tailoring
+
+Computer training
+
+Teacher training
+
+Individual skills development
+
+Disaster Relief
+
+Prevention
+
+Rehabilitation of disaster victims
+
+Rural Development
+
+Water supply and sanitation
+
+Wells, toilets, watering places
+
+Agricultural projects
+
+Animal husbandry
+
+Each project section should include smooth animations and visual consistency.
+
+Resources and Initiatives Pages
+Page 1: Educational Resources
+
+Scholarships and grants
+
+Resource libraries
+
+Workshops and seminars
+
+Page 2: Mentorship and Networking
+
+Mentorship programs
+
+Networking events
+
+Internships and research opportunities
+
+Page 3: Academic Support
+
+Tutoring services
+
+Academic advising
+
+Page 4: Community and Well-being
+
+Student clubs and societies
+
+Mental health support
+
+Page 5: Funding and Sustainability
+
+Fundraising initiatives
+
+Grant application guidance
+
+Each page should follow a consistent layout system with animated section entrances.
+
+INTERACTION & ANIMATION DETAILS
+
+Smooth scroll behavior
+
+Subtle hover animations on cards and buttons
+
+Cursor interaction that reacts slightly to buttons and links
+
+Page transitions should feel smooth and polished
+
+No heavy or distracting effects
+
+TECHNICAL NOTES
+
+Frontend only
+
+Clean, well-structured components
+
+Semantic HTML for accessibility
+
+Optimized for performance
+
+No backend APIs or databases
+
+FINAL GOAL
+
+The final website should feel like a credible international nonprofit organization, suitable for donors, partners, students, and communities.
+
+It should inspire trust, communicate impact clearly, and feel calm, modern, and human.
