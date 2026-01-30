@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Heart, Mail, MapPin, Phone, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Mail, MapPin, Phone, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 
 export function Footer() {
   return (
@@ -109,8 +109,8 @@ export function Footer() {
           <p className="text-white/50 text-sm text-center md:text-left">
             © {new Date().getFullYear()} Charitable Society for Students of Sciences. All rights reserved.
           </p>
-          <p className="text-white/50 text-sm flex items-center gap-1">
-            Made with <Heart className="w-4 h-4 text-accent fill-current" /> by Zuihaib
+          <p className="text-white/50 text-sm">
+            Made by Zuhaib
           </p>
         </div>
       </div>
