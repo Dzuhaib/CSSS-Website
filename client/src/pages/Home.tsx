@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Heart, Users, Droplets, BookOpen } from "lucide-react";
+import { ArrowRight, Heart, Users, Droplets, BookOpen, Stethoscope, Wheat, Shield } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Section } from "@/components/Section";
+import { HeroSlider } from "@/components/HeroSlider";
 
 const STATS = [
   { label: "Years of Impact", value: "20+", icon: Heart },
@@ -13,23 +14,62 @@ const STATS = [
   { label: "Water Wells Built", value: "100+", icon: Droplets },
 ];
 
-const AREAS = [
+const FOCUS_AREAS = [
   {
+    icon: BookOpen,
     title: "Education",
+    desc: "We provide educational opportunities and resources to ensure access to quality education for all.",
+    color: "from-blue-500/20 to-blue-600/10",
+  },
+  {
+    icon: Droplets,
+    title: "Water, Sanitation & Hygiene",
+    desc: "Our efforts aim to improve access to clean water and sanitation facilities and promote better hygiene practices.",
+    color: "from-cyan-500/20 to-cyan-600/10",
+  },
+  {
+    icon: Wheat,
+    title: "Food Security",
+    desc: "We work to enhance food security and foster economic growth to ensure sustainable livelihoods.",
+    color: "from-amber-500/20 to-amber-600/10",
+  },
+  {
+    icon: Heart,
+    title: "Orphan & Child Care",
+    desc: "We offer care and support for orphans and vulnerable children, ensuring their well-being and development.",
+    color: "from-rose-500/20 to-rose-600/10",
+  },
+  {
+    icon: Users,
+    title: "Youth & Women Empowerment",
+    desc: "We empower youth and women through various programs, helping them gain skills and opportunities.",
+    color: "from-violet-500/20 to-violet-600/10",
+  },
+  {
+    icon: Shield,
+    title: "Peace-building & Governance",
+    desc: "We promote peace-building initiatives, conflict resolution, and good governance practices.",
+    color: "from-emerald-500/20 to-emerald-600/10",
+  },
+];
+
+const FEATURED_PROJECTS = [
+  {
+    title: "Education Programs",
     desc: "Building schools, providing scholarships, and creating learning environments for the next generation.",
     image: "/images/children-school.jpg",
     link: "/projects"
   },
   {
-    title: "Healthcare",
+    title: "Healthcare Initiatives",
     desc: "Delivering essential medical services, health campaigns, and emergency care to underserved areas.",
     image: "/images/health-campaign.jpg",
     link: "/projects"
   },
   {
-    title: "Water & Hygiene",
-    desc: "Ensuring access to clean water through wells and promoting sanitation in rural communities.",
-    image: "/images/water-distribution.jpg",
+    title: "Humanitarian Relief",
+    desc: "Providing vital food security, disaster relief, and sustainable support to families in need.",
+    image: "/images/aid-distribution.jpg",
     link: "/projects"
   }
 ];
@@ -39,175 +79,222 @@ export default function Home() {
     <div className="min-h-screen bg-background flex flex-col">
       <Navbar />
       
-      {/* Hero Section */}
-      <section className="relative h-screen min-h-[600px] flex items-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary/40 mix-blend-multiply z-10" />
-          <img 
-            src="/images/children-school.jpg" 
-            alt="Students learning" 
-            className="w-full h-full object-cover"
-          />
-        </div>
-
-        <div className="container mx-auto px-4 md:px-6 relative z-20 pt-20">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-3xl"
-          >
-            <span className="text-accent font-bold tracking-wider uppercase text-sm mb-4 block">
-              Founded in 2003
-            </span>
-            <h1 className="text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-tight">
-              Empowering Communities,<br /> Building Futures.
-            </h1>
-            <p className="text-xl text-white/90 mb-8 max-w-xl font-light leading-relaxed">
-              The Charitable Society for Students of Sciences (CSSS) is dedicated to education, health, and humanitarian support across Somalia.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/projects">
-                <Button size="lg" className="rounded-full px-8 text-lg bg-white text-primary hover:bg-white/90">
-                  Our Work
-                </Button>
-              </Link>
-              <Link href="/contact">
-                <Button size="lg" variant="outline" className="rounded-full px-8 text-lg border-white text-white hover:bg-white/10 hover:text-white backdrop-blur-sm">
-                  Get Involved
-                </Button>
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      {/* Hero Slider */}
+      <HeroSlider />
 
       {/* Stats Section */}
-      <Section className="bg-primary text-white py-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <Section className="bg-primary text-white py-16 -mt-1">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
           {STATS.map((stat, i) => (
             <motion.div 
               key={i}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="text-center"
+              transition={{ delay: i * 0.1, duration: 0.5 }}
+              className="text-center group"
             >
-              <stat.icon className="w-8 h-8 mx-auto mb-4 text-accent" />
+              <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors duration-300">
+                <stat.icon className="w-7 h-7 text-accent" />
+              </div>
               <div className="text-4xl md:text-5xl font-display font-bold mb-2">{stat.value}</div>
-              <div className="text-white/70 text-sm font-medium uppercase tracking-wide">{stat.label}</div>
+              <div className="text-white/70 text-sm font-medium uppercase tracking-wider">{stat.label}</div>
             </motion.div>
           ))}
         </div>
       </Section>
 
-      {/* Intro Section */}
-      <Section background="white">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+      {/* About Intro Section */}
+      <Section background="white" className="py-20 md:py-28">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
             className="relative"
           >
-            <div className="absolute -top-4 -left-4 w-24 h-24 bg-accent/20 rounded-full blur-2xl" />
-            <img 
-              src="/images/group-photo.jpg" 
-              alt="Our Team" 
-              className="rounded-2xl shadow-2xl relative z-10 w-full aspect-[4/3] object-cover"
-            />
-            <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-primary/10 rounded-full z-0" />
+            {/* Decorative blobs */}
+            <div className="absolute -top-8 -left-8 w-40 h-40 bg-accent/10 rounded-full blur-3xl" />
+            <div className="absolute -bottom-8 -right-8 w-56 h-56 bg-primary/10 rounded-full blur-3xl" />
+            
+            <div className="relative">
+              <img 
+                src="/images/group-photo.jpg" 
+                alt="CSSS Team" 
+                className="rounded-3xl shadow-2xl w-full aspect-[4/3] object-cover"
+              />
+              {/* Floating card */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+                className="absolute -bottom-6 -right-6 md:right-8 bg-white rounded-2xl shadow-xl p-5 border border-border/50"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
+                    <Heart className="w-6 h-6 text-accent" />
+                  </div>
+                  <div>
+                    <div className="text-2xl font-display font-bold text-primary">Since 2003</div>
+                    <div className="text-sm text-muted-foreground">Serving Somalia</div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
           >
-            <h2 className="text-4xl font-display font-bold mb-6 text-primary">A Legacy of Care</h2>
+            <span className="inline-block text-accent font-semibold uppercase tracking-widest text-sm mb-4">Who We Are</span>
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 text-primary leading-tight">
+              A Legacy of Care & Compassion
+            </h2>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              Established in Mogadishu in 2003, CSSS was born from a vision to uplift communities through sustainable development. We believe that education is the foundation of progress, and health is the pillar of a thriving society.
+              The Charitable Society for Students of Sciences (CSSS) is a nonprofit humanitarian and development organization established in Somalia in 2003. Our mission is to support vulnerable individuals affected by human-made and natural disasters, with a strong emphasis on education and health services.
             </p>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Our multifaceted approach addresses immediate humanitarian needs while investing in long-term infrastructure like schools, wells, and clinics.
+              Over two decades, we have expanded our impact across education, healthcare, water sanitation, disaster relief, and community development. Our journey is defined by the resilience of the communities we serve.
             </p>
             <Link href="/about">
               <Button variant="link" className="text-primary p-0 h-auto text-lg font-semibold group">
-                Read our full story <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
+                Learn more about our story 
+                <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
               </Button>
             </Link>
           </motion.div>
         </div>
       </Section>
 
-      {/* Featured Areas */}
-      <Section background="muted">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-accent font-bold uppercase tracking-widest text-sm mb-2 block">What We Do</span>
-          <h2 className="text-4xl font-display font-bold text-primary">Our Core Pillars</h2>
+      {/* Focus Areas Section */}
+      <Section background="muted" className="py-20 md:py-28">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="inline-block text-accent font-semibold uppercase tracking-widest text-sm mb-4">Our Focus</span>
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-primary mb-6">Areas of Impact</h2>
+          <p className="text-lg text-muted-foreground">
+            CSSS operates in various critical areas to create lasting change in communities.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {AREAS.map((area, i) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {FOCUS_AREAS.map((area, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.2 }}
-              className="group bg-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-border/50"
+              transition={{ delay: i * 0.1, duration: 0.5 }}
+              className="group bg-card rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 border border-border/50 card-hover"
             >
-              <div className="relative h-64 overflow-hidden">
-                <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/0 transition-colors z-10" />
+              <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${area.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                <area.icon className="w-7 h-7 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 font-display text-primary">{area.title}</h3>
+              <p className="text-muted-foreground leading-relaxed">{area.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Featured Projects */}
+      <Section background="white" className="py-20 md:py-28">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+          <div>
+            <span className="inline-block text-accent font-semibold uppercase tracking-widest text-sm mb-4">What We Do</span>
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-primary">Featured Projects</h2>
+          </div>
+          <Link href="/projects">
+            <Button variant="outline" className="rounded-full px-6 border-primary/20 hover:bg-primary hover:text-white transition-all duration-300">
+              View All Projects
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
+          </Link>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {FEATURED_PROJECTS.map((project, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.15, duration: 0.6 }}
+              className="group"
+            >
+              <div className="relative rounded-2xl overflow-hidden mb-6 img-zoom">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <img 
-                  src={area.image} 
-                  alt={area.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  src={project.image} 
+                  alt={project.title} 
+                  className="w-full aspect-[4/3] object-cover"
                 />
               </div>
-              <div className="p-8">
-                <h3 className="text-2xl font-bold mb-3 font-display">{area.title}</h3>
-                <p className="text-muted-foreground mb-6 line-clamp-3">
-                  {area.desc}
-                </p>
-                <Link href={area.link}>
-                  <Button variant="outline" className="w-full border-primary/20 hover:bg-primary hover:text-white transition-colors">
-                    Learn More
-                  </Button>
-                </Link>
-              </div>
+              <h3 className="text-2xl font-bold mb-3 font-display text-primary group-hover:text-accent transition-colors">{project.title}</h3>
+              <p className="text-muted-foreground mb-4 leading-relaxed">{project.desc}</p>
+              <Link href={project.link}>
+                <Button variant="link" className="p-0 h-auto text-primary font-semibold group/btn">
+                  Learn more 
+                  <ArrowRight className="w-4 h-4 ml-1 transition-transform group-hover/btn:translate-x-1" />
+                </Button>
+              </Link>
             </motion.div>
           ))}
         </div>
       </Section>
 
       {/* CTA Section */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-primary z-0">
+      <section className="py-28 relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 overlay-gradient z-10" />
           <img 
-            src="/images/aid-distribution.jpg" 
-            alt="Background" 
-            className="w-full h-full object-cover opacity-20 mix-blend-overlay"
+            src="/images/ramadan-meal-1.jpg" 
+            alt="Community support" 
+            className="w-full h-full object-cover"
           />
         </div>
-        <div className="container mx-auto px-4 relative z-10 text-center">
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">Make a Difference Today</h2>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto mb-10">
-            Your support enables us to continue our vital work in education, healthcare, and humanitarian relief. Join us in building a better future.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact">
-              <Button size="lg" className="bg-accent hover:bg-accent/90 text-white rounded-full px-10 py-6 text-lg shadow-xl">
-                Donate Now
-              </Button>
-            </Link>
-            <Link href="/about">
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary rounded-full px-10 py-6 text-lg">
-                Partner With Us
-              </Button>
-            </Link>
-          </div>
+        
+        <div className="container mx-auto px-4 relative z-20">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto text-center"
+          >
+            <span className="inline-block px-4 py-1.5 bg-white/20 backdrop-blur-sm text-white text-sm font-semibold rounded-full mb-6">
+              Join Our Mission
+            </span>
+            <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-6 leading-tight">
+              Make a Difference Today
+            </h2>
+            <p className="text-xl text-white/85 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+              Your support enables us to continue our vital work in education, healthcare, and humanitarian relief. Together, we can build a brighter future.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/contact">
+                <Button 
+                  size="lg" 
+                  className="bg-accent hover:bg-accent/90 text-white rounded-full px-10 py-7 text-lg shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-1 font-semibold"
+                >
+                  <Heart className="w-5 h-5 mr-2 fill-current" />
+                  Donate Now
+                </Button>
+              </Link>
+              <Link href="/about">
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-2 border-white/40 text-white hover:bg-white/15 hover:border-white/60 rounded-full px-10 py-7 text-lg backdrop-blur-sm transition-all duration-300"
+                >
+                  Partner With Us
+                </Button>
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </section>
 

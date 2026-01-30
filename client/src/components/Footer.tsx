@@ -1,88 +1,117 @@
 import { Link } from "wouter";
-import { Facebook, Twitter, Instagram, Mail, Phone, MapPin } from "lucide-react";
+import { Heart, Mail, MapPin, Phone, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-primary text-primary-foreground pt-16 pb-8">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+    <footer className="bg-primary text-white">
+      {/* Main Footer */}
+      <div className="container mx-auto px-4 md:px-6 py-16 md:py-20">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white font-bold font-display text-xl">
+          <div className="lg:col-span-1">
+            <Link href="/" className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-primary font-bold font-display text-2xl shadow-lg">
                 C
               </div>
-              <span className="text-xl font-bold font-display tracking-tight">CSSS</span>
-            </div>
-            <p className="text-primary-foreground/80 leading-relaxed text-sm">
-              Empowering communities through education, health, and humanitarian support since 2003. Building a brighter future for Somalia.
+              <div>
+                <span className="text-xl font-bold font-display tracking-tight block">CSSS</span>
+                <span className="text-xs text-white/60 uppercase tracking-widest">Since 2003</span>
+              </div>
+            </Link>
+            <p className="text-white/70 text-sm leading-relaxed mb-6">
+              The Charitable Society for Students of Sciences is a nonprofit humanitarian organization dedicated to education, health, and community development in Somalia.
             </p>
+            <div className="flex gap-3">
+              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors" aria-label="Facebook">
+                <Facebook className="w-4 h-4" />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors" aria-label="Twitter">
+                <Twitter className="w-4 h-4" />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors" aria-label="LinkedIn">
+                <Linkedin className="w-4 h-4" />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors" aria-label="Instagram">
+                <Instagram className="w-4 h-4" />
+              </a>
+            </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold font-display text-white mb-6">Quick Links</h3>
+            <h4 className="font-display font-bold text-lg mb-6">Quick Links</h4>
             <ul className="space-y-3">
-              <li><Link href="/about" className="text-primary-foreground/80 hover:text-accent transition-colors">About Us</Link></li>
-              <li><Link href="/projects" className="text-primary-foreground/80 hover:text-accent transition-colors">Our Projects</Link></li>
-              <li><Link href="/resources" className="text-primary-foreground/80 hover:text-accent transition-colors">Resources</Link></li>
-              <li><Link href="/contact" className="text-primary-foreground/80 hover:text-accent transition-colors">Contact</Link></li>
+              {[
+                { href: "/about", label: "About Us" },
+                { href: "/projects", label: "Our Projects" },
+                { href: "/resources", label: "Resources" },
+                { href: "/contact", label: "Contact" },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link 
+                    href={link.href} 
+                    className="text-white/70 hover:text-white transition-colors text-sm inline-block"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Programs */}
           <div>
-            <h3 className="text-lg font-semibold font-display text-white mb-6">Contact Us</h3>
+            <h4 className="font-display font-bold text-lg mb-6">Our Programs</h4>
+            <ul className="space-y-3">
+              {[
+                "Education",
+                "Healthcare",
+                "Water & Sanitation",
+                "Food Security",
+                "Youth Empowerment",
+                "Disaster Relief",
+              ].map((item) => (
+                <li key={item}>
+                  <span className="text-white/70 text-sm">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="font-display font-bold text-lg mb-6">Contact Us</h4>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3 text-primary-foreground/80">
-                <MapPin className="w-5 h-5 shrink-0 text-accent" />
-                <span>Mogadishu, Somalia</span>
+              <li className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-accent mt-0.5 shrink-0" />
+                <span className="text-white/70 text-sm">Mogadishu, Somalia</span>
               </li>
-              <li className="flex items-center gap-3 text-primary-foreground/80">
-                <Phone className="w-5 h-5 shrink-0 text-accent" />
-                <span>+252 61 123 4567</span>
+              <li className="flex items-start gap-3">
+                <Mail className="w-5 h-5 text-accent mt-0.5 shrink-0" />
+                <a href="mailto:info@csss.org" className="text-white/70 hover:text-white transition-colors text-sm">
+                  info@csss-somalia.org
+                </a>
               </li>
-              <li className="flex items-center gap-3 text-primary-foreground/80">
-                <Mail className="w-5 h-5 shrink-0 text-accent" />
-                <span>info@csss-somalia.org</span>
+              <li className="flex items-start gap-3">
+                <Phone className="w-5 h-5 text-accent mt-0.5 shrink-0" />
+                <a href="tel:+252000000000" className="text-white/70 hover:text-white transition-colors text-sm">
+                  +252 61 123 4567
+                </a>
               </li>
             </ul>
-          </div>
-
-          {/* Newsletter */}
-          <div>
-            <h3 className="text-lg font-semibold font-display text-white mb-6">Stay Updated</h3>
-            <p className="text-sm text-primary-foreground/80 mb-4">
-              Subscribe to our newsletter for the latest updates on our projects.
-            </p>
-            <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
-              <input 
-                type="email" 
-                placeholder="Email address" 
-                className="bg-white/10 border-none text-white placeholder:text-white/50 rounded-lg px-4 py-2 w-full focus:ring-2 focus:ring-accent outline-none"
-              />
-              <button className="bg-accent text-white px-4 py-2 rounded-lg hover:bg-accent/90 transition-colors">
-                Join
-              </button>
-            </form>
           </div>
         </div>
+      </div>
 
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-primary-foreground/60">
+      {/* Bottom Bar */}
+      <div className="border-t border-white/10">
+        <div className="container mx-auto px-4 md:px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-white/50 text-sm text-center md:text-left">
             © {new Date().getFullYear()} Charitable Society for Students of Sciences. All rights reserved.
           </p>
-          <div className="flex gap-4">
-            <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-accent transition-colors text-white">
-              <Facebook className="w-5 h-5" />
-            </a>
-            <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-accent transition-colors text-white">
-              <Twitter className="w-5 h-5" />
-            </a>
-            <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-accent transition-colors text-white">
-              <Instagram className="w-5 h-5" />
-            </a>
-          </div>
+          <p className="text-white/50 text-sm flex items-center gap-1">
+            Made with <Heart className="w-4 h-4 text-accent fill-current" /> for humanity
+          </p>
         </div>
       </div>
     </footer>
