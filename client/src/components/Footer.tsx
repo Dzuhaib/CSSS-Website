@@ -110,7 +110,7 @@ export function Footer() {
             © {new Date().getFullYear()} Charitable Society for Students of Sciences. All rights reserved.
           </p>
           <p className="text-white/50 text-sm flex items-center gap-1">
-            Made with <Heart className="w-4 h-4 text-accent fill-current" /> for humanity
+            Made with <Heart className="w-4 h-4 text-accent fill-current" /> by Zuihaib
           </p>
         </div>
       </div>
