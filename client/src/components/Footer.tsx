@@ -43,8 +43,9 @@ export function Footer() {
             <ul className="space-y-3">
               {[
                 { href: "/about", label: "About Us" },
-                { href: "/projects", label: "Our Projects" },
-                { href: "/resources", label: "Resources" },
+                { href: "/partner", label: "Partner with Us" },
+                { href: "/volunteer", label: "Volunteer" },
+                { href: "/careers", label: "Careers" },
                 { href: "/contact", label: "Contact" },
               ].map((link) => (
                 <li key={link.href}>
@@ -64,15 +65,20 @@ export function Footer() {
             <h4 className="font-display font-bold text-lg mb-6">Our Programs</h4>
             <ul className="space-y-3">
               {[
-                "Education",
-                "Healthcare",
-                "Water & Sanitation",
-                "Food Security",
-                "Youth Empowerment",
-                "Disaster Relief",
-              ].map((item) => (
-                <li key={item}>
-                  <span className="text-white/70 text-sm">{item}</span>
+                { href: "/education", label: "Education" },
+                { href: "/health", label: "Health" },
+                { href: "/development", label: "Development" },
+                { href: "/humanitarian", label: "Humanitarian & Emergency" },
+                { href: "/advocacy", label: "Advocacy" },
+                { href: "/science-outreach", label: "Science Outreach" },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link 
+                    href={link.href} 
+                    className="text-white/70 hover:text-white transition-colors text-sm inline-block"
+                  >
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -84,21 +90,29 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-accent mt-0.5 shrink-0" />
-                <span className="text-white/70 text-sm">Mogadishu, Somalia</span>
+                <span className="text-white/70 text-sm">Maka Al-Mukarama Street<br />Mogadishu, Somalia</span>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-accent mt-0.5 shrink-0" />
-                <a href="mailto:info@csss.org" className="text-white/70 hover:text-white transition-colors text-sm">
+                <a href="mailto:info@csss-somalia.org" className="text-white/70 hover:text-white transition-colors text-sm">
                   info@csss-somalia.org
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-accent mt-0.5 shrink-0" />
-                <a href="tel:+252000000000" className="text-white/70 hover:text-white transition-colors text-sm">
+                <a href="tel:+252611234567" className="text-white/70 hover:text-white transition-colors text-sm">
                   +252 61 123 4567
                 </a>
               </li>
             </ul>
+            <div className="mt-6">
+              <Link 
+                href="/donation-options" 
+                className="inline-block bg-accent hover:bg-accent/90 text-white text-sm font-semibold px-6 py-3 rounded-full transition-all"
+              >
+                Donate Now
+              </Link>
+            </div>
           </div>
         </div>
       </div>
