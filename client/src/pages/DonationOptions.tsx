@@ -71,8 +71,8 @@ export default function DonationOptions() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <Navbar />
-      <PageHeader 
-        title="Donation Options" 
+      <PageHeader
+        title="Donation Options"
         description="Choose how you want to make a difference. Every gift transforms lives in Somalia."
         image="/images/donation-hero.jpg"
       />
@@ -191,11 +191,11 @@ export default function DonationOptions() {
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-muted/30 p-6 rounded-xl">
                 <h4 className="font-bold text-primary mb-2">Email</h4>
-                <a href="mailto:donations@csss-somalia.org" className="text-accent hover:underline">donations@csss-somalia.org</a>
+                <a href="mailto:Info@csss.org.so" className="text-accent hover:underline">Info@csss.org.so</a>
               </div>
               <div className="bg-muted/30 p-6 rounded-xl">
                 <h4 className="font-bold text-primary mb-2">Phone</h4>
-                <a href="tel:+252611234567" className="text-accent hover:underline">+252 61 123 4567</a>
+                <a href="tel:+252615523117" className="text-accent hover:underline">+252615523117</a>
               </div>
             </div>
           </motion.div>
@@ -214,8 +214,8 @@ export default function DonationOptions() {
             <p className="text-lg text-white/80 mb-8">
               There's never been a more important time to give. Contact us today to learn more about how your donation can make a lasting difference in the lives of Somali families.
             </p>
-            <a 
-              href="/contact" 
+            <a
+              href="/contact"
               className="inline-block bg-white text-accent hover:bg-white/90 font-semibold px-8 py-4 rounded-full transition-all hover:-translate-y-1"
             >
               Contact Us to Donate

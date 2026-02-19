@@ -10,9 +10,7 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-primary font-bold font-display text-2xl shadow-lg">
-                C
-              </div>
+              <img src="/logo.png" alt="CSSS Logo" className="w-12 h-12 object-contain bg-white rounded-xl shadow-lg p-1" />
               <div>
                 <span className="text-xl font-bold font-display tracking-tight block">CSSS</span>
                 <span className="text-xs text-white/60 uppercase tracking-widest">Since 2003</span>
@@ -90,18 +88,18 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-accent mt-0.5 shrink-0" />
-                <span className="text-white/70 text-sm">Maka Al-Mukarama Street<br />Mogadishu, Somalia</span>
+                <span className="text-white/70 text-sm">Wabari -21 October mogadishu -Somalia</span>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-accent mt-0.5 shrink-0" />
-                <a href="mailto:info@csss-somalia.org" className="text-white/70 hover:text-white transition-colors text-sm">
-                  info@csss-somalia.org
+                <a href="mailto:Info@csss.org.so" className="text-white/70 hover:text-white transition-colors text-sm">
+                  Info@csss.org.so
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-accent mt-0.5 shrink-0" />
-                <a href="tel:+252611234567" className="text-white/70 hover:text-white transition-colors text-sm">
-                  +252 61 123 4567
+                <a href="tel:+252615523117" className="text-white/70 hover:text-white transition-colors text-sm">
+                  +252615523117
                 </a>
               </li>
             </ul>

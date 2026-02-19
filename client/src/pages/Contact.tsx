@@ -9,8 +9,8 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <Navbar />
-      <PageHeader 
-        title="Get in Touch" 
+      <PageHeader
+        title="Get in Touch"
         description="We'd love to hear from you. Reach out to collaborate, donate, or learn more."
         image="/images/water-distribution.jpg"
       />
@@ -43,8 +43,7 @@ export default function Contact() {
               </div>
               <h3 className="font-bold text-xl text-primary mb-3 font-display">Headquarters</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Maka Al-Mukarama Street<br />
-                Mogadishu, Somalia
+                Wabari -21 October mogadishu -Somalia
               </p>
             </motion.div>
 
@@ -60,8 +59,7 @@ export default function Contact() {
               </div>
               <h3 className="font-bold text-xl text-primary mb-3 font-display">Phone</h3>
               <p className="text-muted-foreground leading-relaxed">
-                +252 61 123 4567<br />
-                +252 61 765 4321
+                +252615523117
               </p>
             </motion.div>
 
@@ -77,8 +75,7 @@ export default function Contact() {
               </div>
               <h3 className="font-bold text-xl text-primary mb-3 font-display">Email</h3>
               <p className="text-muted-foreground leading-relaxed">
-                <a href="mailto:info@csss-somalia.org" className="hover:text-primary transition-colors">info@csss-somalia.org</a><br />
-                <a href="mailto:partnerships@csss-somalia.org" className="hover:text-primary transition-colors">partnerships@csss-somalia.org</a>
+                <a href="mailto:Info@csss.org.so" className="hover:text-primary transition-colors">Info@csss.org.so</a>
               </p>
             </motion.div>
 
@@ -110,29 +107,29 @@ export default function Contact() {
           >
             <h3 className="font-bold text-xl text-primary mb-6 font-display">Follow Us</h3>
             <div className="flex justify-center gap-4">
-              <a 
-                href="#" 
+              <a
+                href="#"
                 className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook className="w-5 h-5" />
               </a>
-              <a 
-                href="#" 
+              <a
+                href="#"
                 className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
                 aria-label="Twitter"
               >
                 <Twitter className="w-5 h-5" />
               </a>
-              <a 
-                href="#" 
+              <a
+                href="#"
                 className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a 
-                href="#" 
+              <a
+                href="#"
                 className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
                 aria-label="Instagram"
               >
