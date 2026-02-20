@@ -145,12 +145,9 @@ export function Navbar() {
 
         <Link href="/" className="flex items-center z-50 group">
           <img
-          src="/logo.png"
-          alt="CSSS Logo"
-          className={`h-14 w-auto object-contain transition-all duration-300 group-hover:scale-105 ${isScrolled
-              ? ""
-              : ""
-            }`}
+            src="/logo.png"
+            alt="CSSS Logo"
+            className="h-16 w-auto object-contain transition-all duration-300 group-hover:scale-105"
           />
         </Link>
 
