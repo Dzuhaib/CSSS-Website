@@ -142,25 +142,16 @@ export function Navbar() {
         }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3 z-50 group">
+
+        <Link href="/" className="flex items-center z-50 group">
           <img
-            src="/logo.png"
-            alt="CSSS Logo"
-            className={`w-11 h-11 object-contain transition-all duration-300 group-hover:scale-105 rounded-xl shadow-lg p-1 ${isScrolled
-                ? "bg-white"
-                : "bg-white/95 backdrop-blur-sm"
-              }`}
+          src="/logo.png"
+          alt="CSSS Logo"
+          className={`h-14 w-auto object-contain transition-all duration-300 group-hover:scale-105 ${isScrolled
+              ? ""
+              : ""
+            }`}
           />
-          <div className="flex flex-col">
-            <span className={`text-lg font-bold font-display tracking-tight leading-none transition-colors duration-300 ${isScrolled ? "text-primary" : "text-white"
-              }`}>
-              CSSS
-            </span>
-            <span className={`text-[10px] font-medium uppercase tracking-widest transition-colors duration-300 ${isScrolled ? "text-muted-foreground" : "text-white/70"
-              }`}>
-              Since 2003
-            </span>
-          </div>
         </Link>
 
         {/* Desktop Navigation */}
