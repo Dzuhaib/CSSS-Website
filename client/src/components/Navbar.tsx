@@ -147,7 +147,7 @@ export function Navbar() {
           <img
             src="/logo.png"
             alt="CSSS Logo"
-            className="h-16 w-auto object-contain transition-all duration-300 group-hover:scale-105"
+            className="h-16 w-auto object-contain"
           />
         </Link>
 
